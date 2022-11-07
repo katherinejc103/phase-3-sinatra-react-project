@@ -16,8 +16,13 @@ class ApplicationController < Sinatra::Base
     outfit.to_json
   end
 
-  get '/seasons' do
+  get "/seasons" do
     seasons = Seasons.all
+    seasons.to_json
+  end
+
+  post "/seasons" do 
+    season = Season.create(params)
     season.to_json
   end
   
